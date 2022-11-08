@@ -6,4 +6,12 @@ RSpec.describe Present do
   result = contents.wrap("iphone")
   expect(result).to eq "iphone"
   end
+
+  it "should return iphone if we call wrap and then unwrap" do
+    contents = Present.new
+    contents.wrap("iphone")
+    result = contents.unwrap
+    expect(result).to eq "iphone"
+  end
+
 end

@@ -6,4 +6,11 @@ RSpec.describe PasswordChecker do
     result = password_checker.check("password1")
     expect(result).to eq true
   end
+
+  context "should return Invalid password, must be 8+ characters. if length is less than 8" do
+    it "fails" do
+      password_checker = PasswordChecker.new
+      expect{password_checker.check("robbie")}.to raise_error "Invalid password, must be 8+ characters."
+    end
+  end
 end

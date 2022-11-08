@@ -13,4 +13,11 @@ RSpec.describe Gratitudes do
     expect(result).to eq ["sunshine"]
   end
 
+  it "should reply grateful for sunshine when the format method is called" do
+    gratitude = Gratitudes.new
+    gratitude.add("sunshine")
+    result = gratitude.format
+    expect(result).to eq "Be grateful for: sunshine"
+  end
+
 end

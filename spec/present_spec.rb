@@ -22,4 +22,11 @@ RSpec.describe Present do
     expect(result).to eq "iphone"
   end
 
+  context "if the contents is already unwrapped then give a message of No contents have been wrapped" do
+    it "fails" do
+      contents = Present.new
+      expect{contents.unwrap}.to raise_error "No contents have been wrapped."
+    end
+  end
+
 end
